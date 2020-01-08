@@ -1,12 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="pagaments">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="nom" type="xs:string" minOccurs="unbounded" maxOccurs="3" default="a"/>
-          <xs:attribute name="dni" use="required" maxOccurs="10"/>
-        <xs:element name="dataNaixement" type="xs:date"/>
-          <xs:attribute name="edat" minOccurs="16" maxOccurs="24"/>
+        <xs:element name="nom" type="xs:string" minOccurs="unbounded" maxOccurs="3" default="a">
+          <xs:complexType>
+            <xs:attribute name="dni" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="10"/>
+              </xs:restriction>
+            </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dataNaixement" type="xs:date">
+          <xs:complexType>
+            <xs:attribute name="edat" minOccurs="16" maxOccurs="24"/>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="hora" type="xs:time" maxOccurs="unbounded"/>
         <xs:element name="preu" type="xs:decimal"/>
         <xs:element name="quantitat" type="xs:decimal" fixed="678"/>
