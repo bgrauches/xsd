@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="discs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="grup"/>
+          <xs:attribute name="nom" type="xs:string"/>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="membre" type="xs:string" minOccurs="1" maxOccurs="3"/>
+            <xs:element name="nacionalitat" type="xs:string"/>
+            <xs:element name="web" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:element name="disc"/>
+          <xs:attribute name="preu" type="xs:decimal"/>
+        <xs:complextype>
+          <xs:sequence>
+            <xs:element name="interpreti" type="xs:string"/>
+            <xs:element name="titol" type="xs:string"/>
+            <xs:element name="discogràfica" type="xs:string" default="CBS">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="Sony"/>
+                  <xs:enumeration value="CBS"/>
+                  <xs:enumeration value="SIRE"/>
+                  <xs:enumeration value="ALTRES"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="any" type="xs:date"/>
+              <xs:simpleType>
+                <xs:restriction base="xs:positiveInteger">
+                  <xs:maxInclusive value="4"/>
+                </xs:restriction>
+              </xs:simpleType>
+            <xs:element name="estoc" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complextype>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<discs>
+  <grup nom="muse">
+    <nom>MUSE</nom>
+    <membre>Matthew Bellamy</membre>
+    <membre>Dominic Howard</membre>
+    <membre>Chris Wolstenholme</membre>
+    <nacionalitat>Alemanya</nacionalitat>
+    <web>www.webcutre.org/muse</web>
+    <email>email@webcutre.org</email>
+</grup>
+  <grup nom="feeder">
+    <nom>FEEDER</nom>
+    <membre>Grant Nicholas</membre>
+    <membre>Taka Hirose</membre>
+    <membre>Jon Henry Lee</membre>
+    <carrer>carrer no existeix n2</carrer>
+    <localitat>tampoc existeix</localitat>
+ </grup>
+  <grup nom="nvnud">
+    <nom>no venc ni un disc</nom>
+    <membre>Marta</membre>
+    <membre>Ramon</membre>
+    <membre>Pedro</membre>
+ </grup>
+  <disc preu="12.80">
+    <interpreti nom="muse"/>
+    <titol>Showbiz</titol>
+    <discogràfica>Sony</discogràfica>
+    <any>2000</any>
+    <estoc>20</estoc>
+ </disc>
+  <disc preu="19.90">
+    <interpreti nom="feeder"/>
+    <titol>Echo Parell k</titol>
+    <discogràfica>Sony</discogràfica>
+    <any>1980</any>
+    <estoc>5</estoc>
+ </disc>
+  <disc preu="15.50">
+    <interpreti nom="muse"/>
+    <titol>Origin of symmetry</titol>
+    <discogràfica>SIRE</discogràfica>
+    <any mes="gener">2007</any>
+    <estoc>20</estoc>
+ </disc>
+  <disc preu="13.20">
+    <interpreti nom="feeder"/>
+    <titol>Comfort In Sound</titol>
+    <any>2010</any>
+    <estoc>27</estoc>
+ </disc>
+  <disc preu="4.90">
+    <interpreti nom="nvnud"/>
+    <titol>Això sona realment malament</titol>
+    <any>2011</any>
+    <estoc>200</estoc>
+ </disc>
+</discs>
+

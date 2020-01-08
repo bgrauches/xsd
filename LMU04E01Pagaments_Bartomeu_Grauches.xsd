@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="pagaments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nom" type="xs:string" minOccurs="unbounded" maxOccurs="3" default="a"/>
+          <xs:attribute name="dni" use="required" maxOccurs="10"/>
+        <xs:element name="dataNaixement" type="xs:date"/>
+          <xs:attribute name="edat" minOccurs="16" maxOccurs="24"/>
+        <xs:element name="hora" type="xs:time" maxOccurs="unbounded"/>
+        <xs:element name="preu" type="xs:decimal"/>
+        <xs:element name="quantitat" type="xs:decimal" fixed="678"/>
+        <xs:element name="pagat" type="xs:boolean" default="false"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<!-- Created with Liquid Studio 2018 (https://www.liquid-technologies.com) -->
+<pagaments>
+  <nom>Tofol Verdera</nom>
+  <dataNaixament>1979-02-04</dataNaixament>
+  <hora>23:55:15</hora>
+  <hora>23:55:15</hora>
+  <preu>123.56</preu>
+  <quantitat>678</quantitat>
+  <pagat>true</pagat>
+</pagaments>
